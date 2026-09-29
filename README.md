@@ -20,19 +20,19 @@ JavaScript
 Project Structure
 
 
-Blood-Connect/
-│
-├── index.html
-├── find-blood.html
-├── donate.html
-├── blood-stock.html
-├── requests.html
-├── style.css
-├── script.js
-├── admin.html
-├── admin.css
-├── admin.js
-└── README.md
+Blood-Connect
+
+index.html
+find-blood.html
+donate.html
+blood-stock.html
+requests.html
+style.css
+script.js
+admin.html
+admin.css
+admin.js
+README.md
 
 How to Run
 
