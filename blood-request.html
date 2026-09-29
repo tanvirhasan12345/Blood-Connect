@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request - BloodConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html"> <span>🩸</span> Blood-Connect </a>
+        <nav><a class="active" href="index.html">Home</a>
+            <a href="find-blood.html">Find blood</a>
+            <a href="blood-request.html">Request blood</a>
+            <a href="donor-registration.html">Donor registration</a>
+            <a href="donor-details.html">Donor details</a>
+            <a href="profile.html">Profile</a>
+
+        </nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+    <main>
+        <section class="section tinted">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">NEED BLOOD?</p>
+                    <h2>Submit a blood request</h2>
+                </div>
+                <p>Send a request and Please wait.</p>
+            </div>
+            <form id="requestForm" class="form-card">
+                <div class="form-grid">
+                    <label>Patient Name<input required id="patient" type="text" placeholder="Patient name"></label>
+                    <label>Contact Number<input required id="requestPhone" type="tel" placeholder="01XXXXXXXXX"></label>
+                    <label>Blood Group<select required id="requestBlood">
+                            <option value="">Select Group</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </label>
+                    <label>Hospital / Location<input required id="hospital" type="text"
+                            placeholder="Hospital or area"></label>
+                    <label>Units Needed<input required id="units" type="number" min="1" max="5" value="1"></label>
+                    <label>Urgency<select id="urgency">
+                            <option>Normal</option>
+                            <option>Urgent</option>
+                            <option>Emergency</option>
+                        </select></label>
+                </div>
+                <button class="btn primary" type="submit">Submit request for blood</button>
+            </form>
+            <div id="requestList" class="request-list"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div> <a class="logo" href="index.html"> <span>❤</span> Blood-connect </a>
+            <p>Techonology for a healthier community.</p>
+        </div>
+        <p>Stay with BloodConnect </p>
+
+    </footer>
+    <div id="toast" class="toast">
+
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

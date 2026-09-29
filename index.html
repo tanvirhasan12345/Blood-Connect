@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect — Blood Donation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html"> <span>🩸</span> Blood-Connect </a>
+        <nav><a class="active" href="profile.html">Profile</a>
+            <a href="find-blood.html">Find blood</a>
+            <a href="blood-request.html">Request blood</a>
+            <a href="donor-registration.html">Donor registration</a>
+            <a href="donor-details.html">Donor details</a>
+            <a href="profile.html">Profile</a>
+
+        </nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow"> SAVE A LIFE TODAY </p>
+                <h1>Every drop of blood <br><span> can save a life</span></h1>
+                <p class="hero-text">Join our blood donation community and make a difference in the lives of those in
+                    need.
+                    Your contribution can bring hope and healing to countless individuals.</p>
+                <div class="hero-action">
+                    <a class="btn primary" href="find-blood.html"> Find Blood</a>
+                    <a class="btn light" href="donor-registration.html">Become a Donor</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <strong id="donorCount"> 0 </strong><small> Donors Registered</small>
+                    </div>
+                    <div>
+                        <strong id="requestCount">0</strong><small> Requests for blood</small>
+                    </div>
+
+                    <div>
+                        <strong id="availableUnits">0</strong><small> Available Units</small>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <div class="blood-drop">🩸</div>
+                <h3>Donate Blood</h3>
+                <p> One donation can save a lives</p>
+                <div class="mini-progress"> <span></span></div>
+                <small>Helps others when they need your help</small>
+            </div>
+        </section>
+
+        <section class="section tinted">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">Join our community</p>
+                    <h2>Become a blood donor</h2>
+                </div>
+                <p>Please register your details to become a donor that helps other for find you</p>
+            </div>
+            <form id="donorForm" class="form-card">
+                <div class="form-grid">
+                    <label>Full Name <input required id="name" type="text" placeholder="Enter your name"></label>
+                    <label>Phone Number <input required id="phone" type="tel" placeholder="01XXXXXXXXX"></label>
+                    <label>Blood Group<select required id="blood">
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select></label>
+                    <label>City / Area<input required id="location" type="text"
+                            placeholder="e.g. kapasia,Gazipur"></label>
+                    <label>Last Donation Date<input id="lastDonation" type="date"></label>
+                    <label>Availability<select id="availability">
+                            <option>Available</option>
+                            <option>Unavailable</option>
+                        </select></label>
+                </div>
+                <button class="btn primary" type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section class="section tinted">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">NEED BLOOD?</p>
+                    <h2>Submit a blood request</h2>
+                </div>
+                <p>Send a request and Please wait.</p>
+            </div>
+            <form id="requestForm" class="form-card">
+                <div class="form-grid">
+                    <label>Patient Name<input required id="patient" type="text" placeholder="Patient name"></label>
+                    <label>Contact Number<input required id="requestPhone" type="tel" placeholder="01XXXXXXXXX"></label>
+                    <label>Blood Group<select required id="requestBlood">
+                            <option value="">Select Group</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </label>
+                    <label>Hospital / Location<input required id="hospital" type="text"
+                            placeholder="Hospital or area"></label>
+                    <label>Units Needed<input required id="units" type="number" min="1" max="5" value="1"></label>
+                    <label>Urgency<select id="urgency">
+                            <option>Normal</option>
+                            <option>Urgent</option>
+                            <option>Emergency</option>
+                        </select></label>
+                </div>
+                <button class="btn primary" type="submit">Submit request for blood</button>
+            </form>
+            <div id="requestList" class="request-list"></div>
+        </section>
+    </main>
+
+
+
+    <div id="toast" class="toast">
+
+    </div>
+    <footer class="footer-section">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3 class="footer-brand">🩸 Blood-connect</h3>
+      <p class="about-text">
+        BloodConnect is a modern blood donation platform connecting voluntary blood donors directly with those in urgent need of life-saving blood across Bangladesh.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="contact-info">
+        <li>📞 +880 1111111111</li>
+        <li>✉️ bloodconnect@gmail.com</li>
+        <li>📍 Dhaka, Bangladesh</li>
+      </ul>
+      <div class="social-links">
+        <a href="https://www.facebook.com/tanvir.hasan.586142" target="_blank" class="social-btn">f Facebook page</a>
+        <a href="https://www.facebook.com/tanvir.hasan.586142" target="_blank" class="social-btn">👥 Blood community</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="find-blood.html">Find Blood</a></li>
+        <li><a href="request-blood.html">Request Blood</a></li>
+        <li><a href="register-donor.html">Become a Donor</a></li>
+        <li><a href="donor-details.html">Donor Details</a></li>
+        <li><a href="profile.html">My Profile</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-col">
+  <h4>Top Hospitals</h4>
+  <p class="small-desc">Quick access to major blood centers and hospitals in Bangladesh.</p>
+  <ul class="footer-links">
+    <li>
+      <a href="https://dmch.gov.bd/" target="_blank" rel="noopener noreferrer">
+        🏥 Dhaka Medical College Hospital (DMCH)
+      </a>
+    </li>
+    <li>
+      <a href="https://bsmmu.ac.bd/" target="_blank" rel="noopener noreferrer">
+        🏥 BSMMU (Bangabandhu Sheikh Mujib Medical)
+      </a>
+    </li>
+    <li>
+      <a href="https://sqhospital.com/" target="_blank" rel="noopener noreferrer">
+        🏥 Square Hospital
+      </a>
+    </li>
+    <li>
+      <a href="https://www.evercarebd.com/" target="_blank" rel="noopener noreferrer">
+        🏥 Evercare Hospital Dhaka
+      </a>
+    </li>
+  </ul>
+</div>
+  </div>
+</footer>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

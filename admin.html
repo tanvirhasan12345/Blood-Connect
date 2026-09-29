@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - BloodConnect</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <div id="loginPage">
+    <div class="login-box">
+
+      <div class="brand-header">
+        <span class="blood-icon">🩸</span>
+        <span class="brand-title">BLOOD CONNECT ADMINISTRATOR</span>
+      </div>
+
+      <h2>Admin Login</h2>
+      <p class="sub-text">Please login to open the admin panel</p>
+
+      <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="adminUser" required>
+
+        <label>Password</label>
+        <input type="password" id="adminPass" required>
+
+        <button type="submit">Login as Administrator</button>
+        <p id="loginError" style="color:red;"></p>
+      </form>
+
+      <a href="index.html" class="back-link"> Back to website</a>
+    </div>
+  </div>
+
+
+  <div id="adminPage" style="display:none;">
+
+    <div class="top-bar">
+      <h2>BloodConnect Admin Panel</h2>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="menu">
+      <a href="#dashboardSection"><button type="button">Dashboard</button></a>
+      <a href="#donorsSection"><button type="button">Donors</button></a>
+      <a href="#requestsSection"><button type="button">Requests</button></a>
+      <a href="#stockSection"><button type="button">Blood Stock</button></a>
+    </div>
+
+    <div class="page">
+
+      <section id="dashboardSection" style="margin-bottom: 40px;">
+        <h3>Dashboard Overview</h3>
+        <p>Total Donors: <b id="totalDonors">0</b></p>
+        <p>Total Requests: <b id="totalRequests">0</b></p>
+        <p>Total Blood Units: <b id="totalUnits">0</b></p>
+      </section>
+
+      <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
+
+      <section id="donorsSection" style="margin-bottom: 40px;">
+        <h3>Donor List</h3>
+        <button id="addDonorBtn" type="button" class="btn-add">+ Add New Donor</button>
+        <table class="donor-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Blood Group</th>
+              <th>Phone</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="donorTableBody"></tbody>
+        </table>
+      </section>
+
+      <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
+
+      <section id="requestsSection" style="margin-bottom: 40px;">
+        <h3>Blood Requests</h3>
+        <div id="requestList"></div>
+      </section>
+
+      <hr style="border: 0; border-top: 1px solid #ccc; margin: 30px 0;">
+
+      <section id="stockSection" style="margin-bottom: 40px;">
+        <h3>Blood Stock Management</h3>
+        <div id="stockList"></div>
+        <br>
+        <button id="saveStockBtn">Save Stock</button>
+      </section>
+
+    </div>
+
+  </div>
+
+  <div id="donorPopup" class="popup" style="display:none;">
+    <div class="popup-box">
+      <h3 id="popupTitle">Add Donor</h3>
+      <form id="donorForm">
+        <input type="hidden" id="donorId">
+
+        <label>Name</label>
+        <input type="text" id="donorName" required>
+
+        <label>Phone</label>
+        <input type="text" id="donorPhone" required>
+
+        <label>Blood Group</label>
+        <select id="donorBlood">
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+          <option>O+</option>
+          <option>O-</option>
+        </select>
+
+        <label>Location</label>
+        <input type="text" id="donorLocation" required>
+
+        <label>Availability</label>
+        <select id="donorStatus">
+          <option>Available</option>
+          <option>Unavailable</option>
+        </select>
+
+        <br><br>
+        <button type="submit">Save</button>
+        <button type="button" id="closePopupBtn">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+
+</html>

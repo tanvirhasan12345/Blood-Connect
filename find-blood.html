@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find blood - BloodConnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <a class="logo" href="index.html"> <span>🩸</span> Blood-Connect </a>
+        <nav><a class="active" href="index.html">Home</a>
+            <a href="find-blood.html">Find blood</a>
+            <a href="blood-request.html">Request blood</a>
+            <a href="donor-registration.html">Donor registration</a>
+            <a href="donor-details.html">Donor details</a>
+            <a href="profile.html">Profile</a>
+
+        </nav>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <main>
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">FIND DONORS</p>
+                    <h2>Find Blood what type you need</h2>
+                </div>
+                <p>Search registered donors by blood group and location.</p>
+            </div>
+            <div class="find-layout">
+                <div class="find-main">
+               
+                    <div class="search-box">
+                        <select id="bloodFilter">
+                            <option value="">All Blood Groups</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                        <input id="locationFilter" type="text" placeholder="e.g. kapasia,Gazipur">
+                        <button class="btn primary" type="button" onclick="renderDonors()">Search Donors</button>
+                        <button class="btn light" type="button" onclick="clearFilters()">Clear</button>
+                    </div>
+                    <div class="avaliabe-head">
+                        <h3>Available Donors</h3>
+                        <p>Registered donoes</p>
+                    </div>
+                    <div id="donorResults" class="cards"></div>
+                </div>
+
+                <aside class="find-side">
+                    <div class="blood-drop">🩸</div>
+                    <h3>Need Blood</h3>
+                    <p>join our community, Jour donation can make a big difference in the lives of those in need.</p>
+                    <a class="btn primary" href="donor-registration.html">Become a Donor</a>
+                    <small> it only takes a few second to register</small>
+                </aside>
+            </div>
+        </section>
+        <section class="donor-cta">
+            <div>
+                <p class="eyebrow">JOIN THE COMMUNITY</p>
+                <h2>Become a blood <span>donor</span></h2>
+                <p>Register your details so patients can find you when they need help.</p>
+                <a class="btn primary" href="donor-registration.html">Register as Donor →</a>
+            </div>
+            <div class="donor-benefits">
+                <div class="request"><strong>❤ Save lives</strong>
+                    <p>One donation can help save up to three lives.</p>
+                </div>
+                <div class="request"><strong>✓ Safe & secure</strong>
+                    <p>Your information is kept in this demo browser
+                        storage.</p>
+                </div>
+                <div class="request"><strong>● Be a hero</strong>
+                    <p>Help people in your community when they need
+                        blood.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div> <a class="logo" href="index.html"> <span>❤</span> Blood-connect </a>
+            <p>Techonology for a healthier community.</p>
+        </div>
+        <p>Stay with BloodConnect </p>
+
+    </footer>
+    <div id="toast" class="toast">
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
